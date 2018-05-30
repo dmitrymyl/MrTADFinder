@@ -9,9 +9,9 @@ function read_generic_WG_contact_map(map_file,N);
 	
 	map=readdlm(map_file);
 	I=map[:,1];
-	I=round(Int64,I);
+	I=round.(Int64,I);
 	J=map[:,2];
-	J=round(Int64,J);
+	J=round.(Int64,J);
 	K=map[:,3];
 	W=sparse(I,J,K,N,N);
 
@@ -325,7 +325,7 @@ function optimize_TADs_modlouvain(W,E_W,res,order=1);
 #order=0, random
 	
 	N=size(W,1);
-    i_no_dark=find(sum(abs(W),1).>0);
+    i_no_dark=find(sum(abs.(W),1).>0);
     N_no_dark=length(i_no_dark);
 
     B=W-E_W*res;

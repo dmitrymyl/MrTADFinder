@@ -1,4 +1,4 @@
-include("/home/fas/gerstein/ky26/Github/MrTADFinder/MrTADFinder.jl");
+include("./MrTADFinder.jl");
 
 paras=[];
 for x in ARGS;
@@ -20,7 +20,7 @@ res=parse(Float64,res_str[p+1:end])
 
 #chromosome 
 pick_chr=paras[5];
-pick_chr=parse(Float64,pick_chr);
+pick_chr=parse(Int64,pick_chr);
 
 #loc of output file
 out_file=paras[6];
